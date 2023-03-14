@@ -1,0 +1,12 @@
+.Hero {
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 270px;
+    gap: 30px;
+}
+.Heading {
+    color: var(--color-white);
+}

@@ -1,11 +1,12 @@
 import Navbar from "./components/Navbar/Navbar";
-import "./index";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   return (
     <div className="App">
        <>
         <Navbar />
+        <Hero />
       </>
     </div>
   );
