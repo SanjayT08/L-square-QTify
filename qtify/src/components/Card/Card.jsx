@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import styles from "./Card.module.css";
 
-function Card() {
+function Card({ data}) {
   return (
-    <div>Card</div>
-  )
+    <div className={styles.wrapper}>
+      <div className={styles.cardwrapper}>
+        <img src={data.image} alt="album" loading="lazy" />
+        <div className={styles.cardbody}>
+          <div className={styles.followwrapper}>
+            <p>{data.follows}Follows</p>
+          </div>
+        </div>
+      </div>
+      <div className={styles.titlewrapper}>
+        <p>{data.title}</p>
+      </div>
+    </div>
+  );
 }
 
 export default Card;
