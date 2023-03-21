@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
 import { StyledEngineProvider } from "@mui/material/styles";
-// import FAQAccordion from "./components/FAQAccordion/FAQAccordion";
+import FAQAccordion from "./components/FAQAccordion/FAQAccordion";
 
 
 
@@ -23,7 +23,7 @@ function App() {
             filterfetch={fetchFilters}
             type="song"
           />
-          {/* <FAQAccordion /> */}
+          <FAQAccordion />
         </StyledEngineProvider>
       </>
     </div>
