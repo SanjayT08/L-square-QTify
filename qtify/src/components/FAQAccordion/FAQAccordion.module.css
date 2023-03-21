@@ -17,6 +17,7 @@ color: var(--color-white);
 border-radius: 10px;
 height: 78px;
 margin: 0 132px;
+overflow: hidden;
 }
 .answers {
 background-color: var(--color-white);
@@ -26,6 +27,7 @@ height: 81px;
 border-bottom-left-radius: 10px;
 border-bottom-right-radius: 10px;
 padding: 20px;
+overflow: hidden;
 }
 .expandicon {
 color: var(--color-primary);
