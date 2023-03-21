@@ -1,22 +1,56 @@
+import { Chip, Tooltip } from "@mui/material";
 import React from "react";
 import styles from "./Card.module.css";
 
-function Card({ data}) {
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.cardwrapper}>
-        <img src={data.image} alt="album" loading="lazy" />
-        <div className={styles.cardbody}>
-          <div className={styles.followwrapper}>
-            <p>{data.follows}Follows</p>
+function Card({ data, type }) {
+  const getCard = (type) => {
+    switch (type) {
+      case "album": {
+        const { image, follows, title, songs } = data;
+        return (
+          <Tooltip title={`${songs.length} songs`} placement="top" arrow>
+          <div className={styles.wrapper}>
+            <div className={styles.cardwrapper}>
+              <img src={image} alt="album" loading="lazy" />
+              <div className={styles.cardbody}>
+                <Chip
+                  label={`${follows} Follows`}
+                  size="small"
+                  className={styles.followwrapper}
+                />
+              </div>
+            </div>
+            <div className={styles.titlewrapper}>
+              <p>{title}</p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.titlewrapper}>
-        <p>{data.title}</p>
-      </div>
-    </div>
-  );
+          </Tooltip>
+        );
+      }
+      case "song": {
+        const { image, likes, title } = data;
+
+        return (
+          <div className={styles.wrapper}>
+            <div className={styles.cardwrapper}>
+              <img src={image} alt="song" loading="lazy" />
+              <div className={styles.cardbody}>
+                <div className={styles.followwrapper}>
+                  <p>{likes} Likes</p>
+                </div>
+              </div>
+            </div>
+            <div className={styles.titlewrapper}>
+              <p>{title}</p>
+            </div>
+          </div>
+        );
+      }
+      default:
+        return <></>;
+    }
+  };
+  return getCard(type);
 }
 
 export default Card;

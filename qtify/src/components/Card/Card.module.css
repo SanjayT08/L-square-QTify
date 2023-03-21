@@ -2,15 +2,14 @@
   width: 160px;
   color: var(--color-white);
 }
-
 .cardwrapper {
   border-radius: 10px;
   height: 205px;
   overflow: hidden;
   position: relative;
   width: 160px;
+  margin-top: 18px;
 }
-
 .cardbody {
   align-items: center;
   background-color: var(--color-white);
@@ -22,9 +21,9 @@
   position: absolute;
   width: 100%;
 }
-
 .followwrapper {
   background-color: var(--color-black);
+  color: var(--color-white);
   border-radius: 10px;
   font-size: 12px;
   padding: 6px;
