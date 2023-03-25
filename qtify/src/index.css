@@ -18,6 +18,7 @@ body {
   height: 100%;
 }
 body {
+  color: var(--color-white);
   font-family: 'Poppins', sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -52,5 +53,12 @@ h6 {
 
 .swiper-slide {
   width: auto !important;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 

@@ -4,23 +4,16 @@ import Carousel from "../Carousel/Carousel";
 import Filter from "../Filter/Filter";
 import styles from "./Section.module.css";
 
-function Section({ title, datafetch, filterfetch, type }) {
-  const [cards, setCards] = useState([]);
+function Section({ title, data, filterfetch, type }) {
   const [filters, setFilters] = useState([{ key: "All", label: "All" }]);
   const [filteredIndex, setFilteredIndex] = useState(0);
   const [isShowAll, setIsShowAll] = useState(false);
-
-  const fetchData = async (source) => {
-    const cards = await source();
-    setCards(cards || []);
-  };
 
   const handleToggle = () => {
     setIsShowAll((prevState) => !prevState);
   };
 
   useEffect(() => {
-    fetchData(datafetch);
     if (filterfetch) {
       filterfetch().then((res) => {
         const { data } = res;
@@ -29,21 +22,17 @@ function Section({ title, datafetch, filterfetch, type }) {
     }
   }, []);
   // console.log(data);
-  const filteredCards = cards.filter((card) =>
+  const filteredCards = data.filter((card) =>
     filteredIndex !== 0 ? card.genre.key === filters[filteredIndex].key : card
   );
 
   return (
     <>
       <div className={styles.sectionwrapper}>
-        <div className={styles.wrapper}>
-          <div>
+        <div className={styles.header}>
             <h4>{title}</h4>
-          </div>
-          
-          <div className={styles.showAll} onClick={handleToggle}>
-            <h4>{!isShowAll ? "Show All" : "Collapse"}</h4>
-          </div>
+            <h4 className={styles.showAll} onClick={handleToggle}>{!isShowAll ? "Show All" : "Collapse"}</h4>
+            
         </div>
 
         {filterfetch && (

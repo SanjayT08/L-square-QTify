@@ -1,22 +1,14 @@
-.sectionwrapper {
-  background-color: var(--color-black);
-  padding: 0 30px 60px;
-}
-.wrapper {
-  background-color: var(--color-black);
+.header {
   display: flex;
   justify-content: space-between;
-  color: var(--color-white);
+}
+.showAll {
+  color: var(--color-primary);
+  cursor: pointer;
 }
 .cardswrapper {
   display: flex;
   gap: 40px;
-  flex-wrap: wrap;
   margin-top: 18px;
-}
-
-.showAll {
-  background-color: var(--color-black);
-  color: var(--color-primary);
-  cursor: pointer;
+  flex-wrap: wrap;
 }
